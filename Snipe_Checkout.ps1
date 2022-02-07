@@ -1,5 +1,5 @@
 Import-Module SnipeitPS
-Connect-SnipeitPS -URL 'http://inventory.ctc.local' -apiKey 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVhZGMwYjc0MjNhN2EyZTlkZjI3ZTM3YzE0ODk2YjE1ZWUyMDNmODgzN2EyMWE1YWQ1MGY5MWQwZDE5OWYwMWMyMTNjNjMyNjEwYWExNWQwIn0.eyJhdWQiOiIxIiwianRpIjoiZWFkYzBiNzQyM2E3YTJlOWRmMjdlMzdjMTQ4OTZiMTVlZTIwM2Y4ODM3YTIxYTVhZDUwZjkxZDBkMTk5ZjAxYzIxM2M2MzI2MTBhYTE1ZDAiLCJpYXQiOjE2Mzg5ODQwOTIsIm5iZiI6MTYzODk4NDA5MiwiZXhwIjoxNjcwNTIwMDkyLCJzdWIiOiI0MCIsInNjb3BlcyI6W119.IORKBNtuI5Pr4aZFlh-jZVNSRx7qG2ggRBYtTJhFx7pDA_PiphYojfZL4YGT6R8cbNYn_hIrQEqBN7AiS9H34k5j6fi9ikHrn2IsdxcuiHpmLWD9t7kndfRolLz1HGtgeOyit9rGwoJJm0zJ0pq6cb0o7jqBC3wN2Ml1OJ_AGSXrlrxwPTP-TzCJXXX-b5R_DQKaDVsOiAUxnMckUDYdzOfcyxJ_z30GUg07ifIiqj5iXF3ypD-eaC4jgQiMOiVA_pzjwv-iRYbGh4kxlvC-vx3kn6CBfXTBDGx4C1Vl_jcIYYSdkPbupj53Npqg19CvRF4TWjnnxkOTGmSY4GJKJg-PcWddZiBTdl5hyfzHvtkkvklLTmgTZgMmmQVVrE0yj0pXpPKFk7KCUbQR62jCbZK3sHBY4qKRWOONlIYd9-6Vjxfhz1m6qtHzs9TL2N3jr0hJFWUF6-hMgxkuYsYj3MVHHsb6i5jpCxhSSJTvsjk4RLDrLX745-rFrxBYqxhNjkG0OlOkxWZf5HHxZ7XCkaPAh2LOzJ3oX8VdFfUao7Ejm41VkQVB7nT-QWldAffVpGxWGjzRUec0ivJTCFXtDL69K0Pubo1xngfyNvJnr2KCbNWAgsKSPdt1jl24QFRFaauorvRgUbaPRbYb5CllLiPKjeRFsLICW9hVIZG08EY'
+Connect-SnipeitPS -URL 'exampleURL.com' -apiKey 'exampleAPIkey'
 
 #### Textbox 0 ####
 
@@ -65,7 +65,7 @@ if ($result0 -eq [System.Windows.Forms.DialogResult]::OK)
     $Tag0 = $x0 -split "`r`n"
 
 $Name = Get-SnipeitUser -search "$Tag0" 
-Write-Host "You are about to checkout the items in status label '2', to user: `n `n $Name `n `n and send them to status label 'Ready to Deploy', if this is not correct, do NOT press enter. Close the window and `n retry, making sure the name you entered is correctly spelled. Also try using the username instead of the actual name as it seems to work better. NOTE: YOU MAY NEED TO RUN THIS COMMAND MULTIPLE TIMES AS THE CREATOR OF THIS SCRIPT IS A DUMMY AND CAN'T FIGURE OUT HOW TO PUT IT IN A LOOP WITHOUT BREAKING IT. Thank you."
+Write-Host "You are about to checkout the items in status label 'Moving', to user: `n `n $Name `n `n and send them to status label 'Ready to Deploy', if this is not correct, do NOT press enter. Close the window and `n retry, making sure the name you entered is correctly spelled. Also try using the username instead of the actual name as it seems to work better. NOTE: YOU MAY NEED TO RUN THIS COMMAND MULTIPLE TIMES AS THE CREATOR OF THIS SCRIPT IS A DUMMY AND CAN'T FIGURE OUT HOW TO PUT IT IN A LOOP WITHOUT BREAKING IT. Thank you."
 Pause
 Get-SnipeitAsset -status_id 4 
 $Asset = Get-SnipeitAsset -status_id 4  
